@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaGoogle } from 'react-icons/fa'; // Import social media icons
-import logo1 from './dataversetxt.png'; // Adjust the path to your logo image
+import logo1 from './Component 1 (1).svg'; // Adjust the path to your logo image
 import logo2 from './os.svg'; // Adjust the path to your logo image
 
 const Footer = () => {
@@ -60,7 +60,7 @@ const Footer = () => {
 
       {/* Footer copyright */}
       <div className="text-center mt-4">
-        <p>&copy; 2024 dataverse v4.0 & open source days v13. All Rights Reserved.</p>
+        <p>&copy; 2024 dataverse v3 & open source days v13. All Rights Reserved.</p>
       </div>
     </footer>
   );

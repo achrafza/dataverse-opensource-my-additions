@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import logo1 from './dv.svg'; // Adjust the path to your logo image
+import logo1 from './Component 1 (1).svg'; // Adjust the path to your logo image
 import logo2 from './os.svg'; // Adjust the path to your logo image
 import bckHero from './bck.jpg'; // Import the background image
 
