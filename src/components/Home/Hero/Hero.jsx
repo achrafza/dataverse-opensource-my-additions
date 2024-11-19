@@ -1,80 +1,81 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import logo1 from './Component 1 (1).svg'; // Adjust the path to your logo image
+import logo1 from './dv.svg'; // Adjust the path to your logo image
 import logo2 from './os.svg'; // Adjust the path to your logo image
 import bckHero from './bck.jpg'; // Import the background image
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex flex-col justify-center items-center text-white">
+    <section 
+      className="relative min-h-screen flex flex-col justify-center items-center text-white px-4 py-8" 
+      style={{
+        backgroundImage: `url(${bckHero})`, 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundAttachment: 'fixed',
+      }}
+    >
       {/* Overlay with blur and dark bluish filter */}
-      <div className="absolute inset-0 bg-blue-900 opacity-50 backdrop-blur-md"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900 via-transparent to-black opacity-70"></div>
 
-      {/* Background Image */}
+      {/* Main Content */}
       <div 
-        className="relative w-full h-full flex flex-col justify-center items-center bg-gradient-to-r from-red-500 to-indigo-600"
-        style={{
-          backgroundImage: `url(${bckHero})`, // Set the background image
-          backgroundSize: 'cover', // Make the background cover the entire section
-          backgroundPosition: 'center', // Center the background image
-        }}
+        className="relative w-full flex flex-col justify-center items-center space-y-8 sm:space-y-10 lg:space-y-12 z-10"
       >
-        {/* Overlay logos in the center */}
-        <div className="flex items-center justify-center mb-10 space-x-20">
-          {/* Left Logo with fade in from the left */}
+        {/* Logos and "X" symbol */}
+        <div className="flex flex-wrap items-center justify-center space-x-4 sm:space-x-6 lg:space-x-10">
+          {/* Left Logo */}
           <motion.img 
             src={logo1} 
             alt="Logo 1" 
-            className="w-40 h-40 md:w-52 md:h-52 object-contain"
-            initial={{ opacity: 0, x: -100 }}  // Start faded out and to the left
-            animate={{ opacity: 1, x: 0 }}     // Animate to full opacity and original position
-            transition={{ duration: 1 }}       // Set duration of the animation
+            className="w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-52 lg:h-52 object-contain drop-shadow-lg"
+            initial={{ opacity: 0, x: -100 }}  
+            animate={{ opacity: 1, x: 0 }}     
+            transition={{ duration: 1 }}       
           />
           
-          {/* X symbol with bounce scale */}
+          {/* X Symbol */}
           <motion.span 
-            className="text-white font-extrabold text-6xl md:text-8xl"
-            initial={{ scale: 0 }}              // Start at a scale of 0 (invisible)
-            animate={{ scale: [1.2, 0.9, 1] }}  // Bounce effect (scaling up and then down to 1)
-            transition={{ duration: 1, delay: 0.5, ease: 'easeInOut' }}  // Animation duration and delay
+            className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-md"
+            initial={{ scale: 0 }}             
+            animate={{ scale: [1.2, 0.9, 1] }}  
+            transition={{ duration: 1, delay: 0.5, ease: 'easeInOut' }}  
           >
             X
           </motion.span>
           
-          {/* Right Logo with fade in from the right */}
+          {/* Right Logo */}
           <motion.img 
             src={logo2} 
             alt="Logo 2" 
-            className="w-40 h-40 md:w-52 md:h-52 object-contain"
-            initial={{ opacity: 0, x: 100 }}   // Start faded out and to the right
-            animate={{ opacity: 1, x: 0 }}     // Animate to full opacity and original position
-            transition={{ duration: 1 }}       // Set duration of the animation
+            className="w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-52 lg:h-52 object-contain drop-shadow-lg"
+            initial={{ opacity: 0, x: 100 }}   
+            animate={{ opacity: 1, x: 0 }}     
+            transition={{ duration: 1 }}       
           />
         </div>
 
-        {/* Main text content */}
+        {/* Title */}
         <motion.h1 
-          className="text-5xl md:text-6xl font-bold text-center"
-          initial={{ opacity: 0, y: -50 }}  // Initial state
-          animate={{ opacity: 1, y: 0 }}    // Animate to full opacity
-          transition={{ duration: 1 }}      // Animation duration
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center drop-shadow-lg"
+          initial={{ opacity: 0, y: -50 }}  
+          animate={{ opacity: 1, y: 0 }}    
+          transition={{ duration: 1 }}      
         >
-          DataVerse & Open Source  Events
+          DataVerse & Open Source Events
         </motion.h1>
         
+        {/* Subtitle */}
         <motion.p 
-          className="text-xl md:text-xl mt-4 xl:pl-20 xl:pr-20 ml-20 mr-20 text-center"
+          className="text-sm sm:text-base md:text-lg lg:text-xl mt-4 px-6 sm:px-8 lg:px-12 text-center max-w-3xl"
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Experience the synergy of innovation as Open Source Days collaborates with Dataverse. Together, we bring you an event that celebrates open-source technology and data management.
+          Experience the synergy of innovation as Open Source Days collaborates with DataVerse. Together, we bring you an event that celebrates open-source technology and data management.
         </motion.p>
-        
-
       </div>
     </section>
   );
-}
+};
 
 export default Hero;
